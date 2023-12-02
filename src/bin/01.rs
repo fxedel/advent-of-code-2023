@@ -3,13 +3,13 @@ use std::{env, fs::read_to_string};
 fn main() {
     let args: Vec<String> = env::args().collect();
 
-    if args.len() < 3 {
+    if args.len() < 2 {
         panic!("Usage: 01.rs <input file> [--part-two]")
     }
     
-    let file_path = &args[2];
+    let file_path = &args[1];
 
-    let part_two = args.len() >= 4 && &args[3] == "--part-two";
+    let part_two = args.len() >= 4 && &args[2] == "--part-two";
 
     println!("Sum of calibration values: {}", sum_calibration_values(file_path, part_two));
 }
